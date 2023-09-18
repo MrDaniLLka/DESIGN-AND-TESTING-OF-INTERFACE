@@ -23,7 +23,7 @@ class Connection:
 
         return cursor.fetchall()
 
-    def exec_edit(self, query: str,  args: tuple):
+    def exec_edit(self, query: str, args: tuple):
         self.connection = psycopg2.connect(database=self.dbname,
                                            user=self.user,
                                            password=self.password,
@@ -32,7 +32,6 @@ class Connection:
         cursor.execute(query, args)
         self.connection.commit()
         self.close()
-
 
     def close(self):
         self.connection.close()

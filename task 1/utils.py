@@ -8,12 +8,6 @@ def get_info():
     """)
     return
 
-def get_id_company(con, comp_name: str):
-    company_id = con.exec_select(f"SELECT id FROM companies WHERE name = %s", (comp_name,))
 
-    if len(company_id) == 0:
-        print('Такой компании нет!')
-        return False
-    else:
-        return company_id[0]['id']
-
+def warning():
+    print('Введите корректное значение!')
