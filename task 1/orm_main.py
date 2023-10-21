@@ -40,6 +40,7 @@ if __name__ == '__main__':
             if del_id.isdigit():
                 if session.query(Employee).filter(Employee.id == del_id).count():
                     session.query(Employee).filter(Employee.id == del_id).delete()
+                    session.commit()
                 else:
                     warning()
             else:
