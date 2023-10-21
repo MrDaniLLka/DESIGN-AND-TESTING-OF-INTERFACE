@@ -1,5 +1,6 @@
 from utils import get_info, warning
 from repositories import UserRepository, CompanyRepository
+import sqlalchemy 
 
 if __name__ == '__main__':
     userRep = UserRepository()

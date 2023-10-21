@@ -19,6 +19,7 @@ class UserRepository:
         res = con.exec_select("SELECT * FROM employes WHERE id = %s", (id,))
         con.close()
         return bool(len(res))
+
     def get_all(self):
         con = Connection()
         res = con.exec_select("SELECT id, name, surname FROM employes")
@@ -45,5 +46,3 @@ class CompanyRepository:
         res = con.exec_select("SELECT name FROM companies")
         con.close()
         return res
-
-
