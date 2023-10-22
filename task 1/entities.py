@@ -1,5 +1,6 @@
 from sqlalchemy import Column, String, Integer, ForeignKey
 from base import Base
+from json import JSONEncoder
 
 
 class Company(Base):
@@ -11,6 +12,7 @@ class Company(Base):
     def __init__(self, name: str, address: str):
         self.name = name
         self.address = address
+
 
 
 class Employee(Base):
@@ -26,4 +28,5 @@ class Employee(Base):
         self.surname = surname
         self.position = position
         self.company_id = company_id
+
 
